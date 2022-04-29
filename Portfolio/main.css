@@ -16,6 +16,10 @@ html {
   font-size: 1.6rem;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100vh;
   margin: 0;
   padding: 0;
   /* width: auto; */
@@ -35,26 +39,48 @@ body {
 
 
 
-article>ul {
-  height: 100px;
+main>ul {
+  height: 10rem;
   display: grid;
-  grid-template-areas: "a a a";
+  grid-template-areas: 'li1 li1'
+                       'li2 li3';
   gap: 10px;
-  grid-auto-columns: 200px;
 }
 
-article>ul>li {
-  background-color: lime;
-}
-main
-{display: grid;
-  text-align: center;
-  font-family: "Audiowide", sans-serif;
-}
-article>h1{
-  font-size: 2rem;
+main>ul>li {
+  list-style: none;
+  background-color:rgba(113, 109, 109,0.05);
+  text-align: center ;
+  font-size: larger;
 }
 
+main>ul>li:nth-of-type(1){
+  grid-area: li1;
+}
+main>ul>li:nth-of-type(2){
+  grid-area: li2;
+}
+main>ul>li:nth-of-type(3){
+  grid-area: li3;
+}
+
+
+@media screen and (max-width: 770px) {
+  main>ul {
+      grid-template-areas: 
+          'li1'
+          'li2'
+          'li3';
+  }
+}
+
+/* * desktop
+@media screen and (min-width: 1024px) {
+  main {
+      grid-template-areas: 
+          'li1 li2 li3';
+  }    
+} */
 
 
 
@@ -160,7 +186,7 @@ nav li {
   transform: scale(1);
 }
 
-@media screen and (max-width: 803px) {
+@media screen and (max-width: 770px) {
   header{
     display: block;
   }
